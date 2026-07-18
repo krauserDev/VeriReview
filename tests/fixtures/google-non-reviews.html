@@ -1,0 +1,42 @@
+<!-- Rated cards that are NOT user reviews. All three were being detected,
+     scored and counted on a live page (87 "reviews" analyzed vs 83 real),
+     inflating the count and skewing the Trust Index.
+
+     The invariant that separates them from real reviews: Google stamps a DATE
+     on every genuine user review. None of these has one. -->
+
+<!-- 1. Topic highlight: a quoted excerpt with stars, no author, no date.
+        findAuthor had nothing to grab, so the quote itself became the
+        "author" — the panel showed: 86 · "He acudido a esta -->
+<div id="highlight">
+  <img src="avatar.png" alt="" />
+  <div><span>"He acudido a esta clinica por recomendación y me ha ido muy bien."</span></div>
+  <div><span>5/5</span></div>
+</div>
+
+<!-- 2. Another highlight, shorter quote. Panel showed: 69 · "Gran profesional, muy cercano y -->
+<div id="highlight2">
+  <div><span>"Gran profesional, muy cercano y trato excelente."</span></div>
+  <div><span>5/5</span></div>
+</div>
+
+<!-- 3. Google's own notice. Panel showed it as: 85 · HESEYA -->
+<div id="notice">
+  <div><span>HESEYA</span></div>
+  <div>
+    <span>Nota: Tus comentarios no influirán de forma directa en la clasificación
+    de ninguna página.</span>
+  </div>
+  <div><span>5/5</span></div>
+</div>
+
+<!-- 4. Control: a real review WITH a date must still parse. -->
+<div id="real">
+  <div><span>Dhayana González</span></div>
+  <div><span>287 reseñas</span></div>
+  <div><span>5/5</span> · Hace 9 meses</div>
+  <div>
+    <span>Muy agradecida con el trato profesional y amable de Héctor. Lo recomiendo
+    sin dudarlo, el seguimiento ha sido impecable durante toda la recuperación.</span>
+  </div>
+</div>

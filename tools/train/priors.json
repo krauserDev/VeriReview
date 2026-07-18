@@ -1,0 +1,26 @@
+{
+  "comment": "v0 domain priors for the classifier — the merge baseline for every training run. Signals absent from a corpus keep these values; trained weights may refine magnitude but not flip sign against them.",
+  "SIGNAL_WEIGHTS": {
+    "single-review-author": -1.65,
+    "low-history-author": -0.75,
+    "near-duplicate": -1.35,
+    "repeat-author": -0.9,
+    "anonymous-profile": -0.45,
+    "established-reviewer": 0.9,
+    "verified-purchase": 0.85,
+    "ai-style": -1.2,
+    "marketing-language": -1.05,
+    "keyword-stuffing": -0.8,
+    "short-generic": -0.75,
+    "generic-praise": -0.7,
+    "no-specifics": -0.65,
+    "repeated-structure": -0.6,
+    "emotional-language": -0.55,
+    "excessive-caps": -0.4,
+    "emoji-overload": -0.35,
+    "exclamation-heavy": -0.3,
+    "detailed-review": 0.95
+  },
+  "TEXT_DEPTH_WEIGHT": 0.28,
+  "BIAS": 2.0
+}

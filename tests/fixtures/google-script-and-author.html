@@ -1,0 +1,32 @@
+<!-- Two real failures observed together on a live Google reviews page:
+
+     1. Google inlines <script> INSIDE review cards. A wrapper div holding one
+        has a textContent of hundreds of characters of JS, which beat every real
+        review as "longest text block" — the panel showed
+        "(function(){ (this||self).cVrhhd=function(b,e,q,a,h,k){..." as the
+        review body.
+
+     2. The author's name is a BARE TEXT NODE sitting next to the <span> that
+        holds the profile count, so element-based scanning concatenated them:
+        "Victor Villarroya Ramírez" + "5 reseñas" => "Victor Villarroya Ramírez5 reseñas".
+        The same shape produced "Dhayana GonzálezLocal Guide·287 reseñas". -->
+<div id="card">
+  <span class="rs-chip rs-chip--genuine">93 · Trusted</span>
+  <div class="head">
+    <a href="https://www.google.com/maps/contrib/123">Victor Villarroya Ramírez<span>5 reseñas</span></a>
+  </div>
+  <div><span>Reseña de </span><a href="https://www.google.com">Google</a></div>
+  <div class="meta"><span>5/5</span> · Hace 10 meses</div>
+  <div>
+    <script>
+      (function(){ (this||self).cVrhhd=function(b,e,q,a,h,k){if((b=document.getElementById(b))&&
+      (b.hasAttribute("data-iml")||b.hasAttribute("jsaction"))){var m=b.querySelectorAll("*");
+      for(var n=0;n<m.length;n++){m[n].setAttribute("data-processed","1")}}return b};}).call(this);
+    </script>
+  </div>
+  <div>
+    <span>He tenido la suerte de ponerme en manos de Héctor en la clínica Heseya, en
+    El Campello, y la experiencia no ha podido ser mejor: profesional, cercano y
+    con un seguimiento impecable de la lesión.</span>
+  </div>
+</div>

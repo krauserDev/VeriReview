@@ -1,0 +1,43 @@
+<!-- Google review card containing a BUSINESS OWNER REPLY, reconstructed from the
+     real ancestor chain captured in session:
+
+       DIV.PhaUTe   (20)  "HESEYA (propietario)"
+       DIV          (32)  "HESEYA (propietario)Hace 9 meses"
+       SPAN.yC3ZMb  (32)
+       DIV.p7f0Nd   (32)
+       DIV.PdaDLc   (93)  reply block (marker + date + reply text)
+       DIV          (93)
+       DIV.bwb7ce (1714)  the review card itself (hasRating: true)
+
+     The reply is nested INSIDE the card, so without stripping it first the
+     owner's name, the owner's date and the owner's text all compete with the
+     reviewer's own. Class names are obfuscated and rotate — parsing must be
+     structural, never class-based.
+
+     Also includes the reaction prompt ("Coloca el cursor encima para
+     reaccionar", 39 chars) that leaked into review bodies. -->
+<div id="card" class="bwb7ce">
+  <span class="rs-chip rs-chip--genuine">93 · Trusted</span>
+  <div><span>Dhayana González</span></div>
+  <div><span>Reseña de </span><a href="https://www.google.com">Google</a></div>
+  <div><span>Local Guide</span>·<span>287 reseñas</span>·<span>818 fotos</span></div>
+  <div class="meta"><span>5/5</span> · Hace 2 años</div>
+  <div>
+    <span>Fui por una lesión de hombro que arrastraba desde hacía meses y la
+    recuperación ha sido excelente. El equipo explica cada ejercicio con detalle
+    y el seguimiento entre sesiones marca la diferencia.</span>
+    <span>Más</span>
+  </div>
+  <div class="reactions">Coloca el cursor encima para reaccionar</div>
+  <div>
+    <div class="PdaDLc">
+      <div class="p7f0Nd">
+        <span class="yC3ZMb">
+          <div><div class="PhaUTe">HESEYA (propietario)</div>Hace 9 meses</div>
+        </span>
+      </div>
+      <div><span>muchas gracias por tus comentarios, un placer atenderte</span></div>
+    </div>
+  </div>
+  <div role="menu"><span>Denunciar reseña</span></div>
+</div>

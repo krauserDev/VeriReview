@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ReviewShield</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="head">
+      <img src="../icons/icon48.png" alt="" width="26" height="26" />
+      <div>
+        <div class="head__name">ReviewShield</div>
+        <div class="head__tag">Fake review detector</div>
+      </div>
+      <span class="spacer"></span>
+      <button id="open-settings" class="iconbtn" type="button" aria-label="Open settings" title="Settings">⚙</button>
+    </header>
+
+    <main id="main" aria-live="polite">
+      <!-- Unsupported page -->
+      <section class="state empty" id="state-unsupported" hidden>
+        <p><strong>Open a supported page to begin.</strong></p>
+        <p>ReviewShield analyzes reviews on <b>Amazon</b> product pages and <b>Google</b> places. Head to one, then reopen this menu.</p>
+      </section>
+
+      <!-- Supported page, ready to analyze -->
+      <section class="state" id="state-ready" hidden>
+        <div class="ready__site"><span class="dot" aria-hidden="true"></span> <span id="site-name">Site</span> detected</div>
+        <p class="ready__lead">Ready to analyze the reviews on this page. Nothing runs until you say so.</p>
+        <ul class="feat">
+          <li>100% local &amp; private — no data ever leaves your device</li>
+          <li>Per-review trust scores &amp; suspicious-pattern detection</li>
+          <li>Estimated time <span id="est-time">~2s</span></li>
+        </ul>
+      </section>
+
+      <!-- Existing analysis for this page -->
+      <section class="state" id="state-result" hidden>
+        <div class="hero">
+          <div id="gauge"></div>
+          <div>
+            <div class="hero__label" id="risk-label"></div>
+            <div class="hero__meta" id="summary"></div>
+          </div>
+        </div>
+        <div class="patterns" id="patterns"></div>
+      </section>
+    </main>
+
+    <section class="recent">
+      <div class="recent__title">Recent scans</div>
+      <div id="recent-list" class="recent__list"></div>
+    </section>
+
+    <footer class="foot">
+      <button id="primary-action" class="btn btn--primary" type="button"></button>
+      <div id="secondary-actions" class="foot__row"></div>
+    </footer>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

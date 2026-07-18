@@ -1,0 +1,39 @@
+<!-- Real failure: a restaurant review shows a "Tipo de pedido" attribute whose
+     value is truncated to "C…" with a "Más" expander. The reviewer's name
+     ("Sandra Pastore") lives in the header block outside the detected content
+     card, so the author walker grabbed the truncated value "C…" as the name —
+     and because several reviews share that same "C…", they were falsely grouped
+     as one repeat author.
+
+     The parser must read the real name from the share button's aria-label and
+     never accept a truncated "C…" value. -->
+<div class="jftiEf fontBodyMedium" aria-label="Sandra Pastore" data-review-id="AbCdEf123">
+  <div data-review-id="AbCdEf123">
+    <div class="jJc9Ad">
+      <div class="GHT2ce NsCY4">
+        <button class="al6Kxe" data-href="https://www.google.com/maps/contrib/999/reviews?hl=es">
+          <div class="d4r55 fontTitleMedium">Sandra Pastore</div>
+          <div class="RfnDt">Local Guide · 101 reseñas · 71 fotos</div>
+        </button>
+      </div>
+      <div class="g138K"></div>
+      <div class="GHT2ce" id="content-card">
+        <div class="DU9Pgb">
+          <span class="kvMYJc" role="img" aria-label="4 estrellas"></span>
+          <span class="rsqaWe">Hace 3 años</span>
+        </div>
+        <div> <div class="MyEned" tabindex="-1" lang="es"><span class="wiI7pd">En general bueno. Las croquetas de bacalao muy pequeñas</span></div></div>
+        <div class="PBK6be">
+          <span>Tipo de pedido</span>
+          <span>C…</span>
+          <button class="w8nwRe kyuRq">Más</button>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="Upo0Ec">
+          <button class="gllhef" aria-label="Me gusta" title="Me gusta"><span>Me gusta</span></button>
+          <button class="gllhef" aria-label="Compartir reseña de Sandra Pastore." jsaction="pane.wfvdle240.review.share"><span>Compartir</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

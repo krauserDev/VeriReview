@@ -1,0 +1,26 @@
+{
+  "name": "reviewshield",
+  "version": "1.0.0",
+  "description": "ReviewShield — detect suspicious and manipulated product reviews before you buy.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --max-warnings 0",
+    "format": "prettier --write \"src/**/*.{ts,css,html}\"",
+    "build": "npm run clean && npm run typecheck && npm run lint && node scripts/build.mjs",
+    "test": "node tests/run.mjs",
+    "train": "node tools/train/train.mjs",
+    "package": "npm run build && npm test && node scripts/package.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "esbuild": "^0.21.5",
+    "eslint": "^9.5.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^8.18.0"
+  }
+}

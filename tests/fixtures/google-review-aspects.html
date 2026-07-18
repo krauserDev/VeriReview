@@ -1,0 +1,24 @@
+<!-- Real failure: Google appends a structured attributes block to restaurant
+     reviews ("Tipo de pedido", "Comida: 5", "Servicio: 4", "Ambiente: 5"). Those
+     labels are leaf text nodes, and when the reviewer's name is NOT inside a
+     contributor link / d4r55, the author walker reached the attributes first and
+     showed "Tipo de pedido" / "Comida" as the reviewer's name.
+
+     Here the attributes block deliberately precedes the visible name, matching
+     the DOM order that triggered the bug: the parser must skip every attribute
+     and return the real person. -->
+<div id="card">
+  <span class="rs-chip rs-chip--attention">46 · Questionable</span>
+  <div class="attrs">
+    <div><div>Tipo de pedido</div><div>En el local</div></div>
+    <div>Comida: 5</div>
+    <div>Servicio: 4</div>
+    <div>Ambiente: 5</div>
+  </div>
+  <div class="head">
+    <div>Antonia Alberola</div>
+    <div><span>Local Guide</span> · <span>23 reseñas</span></div>
+  </div>
+  <div class="meta"><span>5/5</span> · Hace 1 mes</div>
+  <div><span>Formidable volveremos sin duda personal encantador</span></div>
+</div>

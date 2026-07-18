@@ -1,0 +1,45 @@
+<!-- Real Google Maps review DOM. The reviewer name ("Stel Abelenda-DeLa") lives
+     in the header block (div.d4r55, inside "GHT2ce NsCY4"), but the detector
+     keys on the star rating and selects the INNER content block (div.GHT2ce with
+     id="content-card") as the review card. The name is therefore in a SIBLING
+     subtree, outside the detected card — so the author walker finds nothing and
+     the review used to fall back to "A Google User".
+
+     The only place the name appears INSIDE the content card is the share
+     button's aria-label ("Compartir reseña de Stel Abelenda-DeLa."), which is
+     the reliable last-resort source the parser now reads. -->
+<div class="jftiEf fontBodyMedium" aria-label="Stel Abelenda-DeLa" data-review-id="ChZDSUhNMG9nS0VJQ0FnSUM4N2RybURREAE">
+  <div data-review-id="ChZDSUhNMG9nS0VJQ0FnSUM4N2RybURREAE">
+    <div class="jJc9Ad">
+      <div>
+        <button class="WEBjve" data-href="https://www.google.com/maps/contrib/112877004667727037684/reviews?hl=es" aria-label="Foto de Stel Abelenda-DeLa"><img class="NBa7we" alt="" src="https://lh3.googleusercontent.com/x"></button>
+      </div>
+      <div class="GHT2ce NsCY4">
+        <div class="m44Iib"></div>
+        <div style="position: relative;">
+          <div class="WNxzHc qLhwHc">
+            <button class="al6Kxe" data-href="https://www.google.com/maps/contrib/112877004667727037684/reviews?hl=es">
+              <div class="d4r55 fontTitleMedium">Stel Abelenda-DeLa</div>
+              <div class="RfnDt">Local Guide · 186 reseñas · 9 fotos</div>
+            </button>
+          </div>
+          <button class="PP3Y3d S1qRNe" aria-label="Acciones en la reseña de Stel Abelenda-DeLa"></button>
+        </div>
+      </div>
+      <div class="g138K"></div>
+      <div class="GHT2ce" id="content-card">
+        <div class="DU9Pgb">
+          <span class="kvMYJc" role="img" aria-label="5 estrellas"></span>
+          <span class="rsqaWe">Hace 6 años</span>
+          <div class="Tuisuc"></div>
+        </div>
+        <div> <div class="MyEned" tabindex="-1" id="ucc-176" lang="es"><span class="wiI7pd">Comida deliciosa gente hermosa.</span></div></div>
+        <div style="clear: both;"></div>
+        <div class="Upo0Ec">
+          <button class="gllhef" aria-label="Me gusta" title="Me gusta"><span>Me gusta</span></button>
+          <button class="gllhef" aria-label="Compartir reseña de Stel Abelenda-DeLa." jsaction="pane.wfvdle240.review.share"><span>Compartir</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

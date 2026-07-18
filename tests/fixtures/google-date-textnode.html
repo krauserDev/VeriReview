@@ -1,0 +1,19 @@
+<!-- Google Search reviews layout where the date is a BARE TEXT NODE inside a
+     container that has element children ("<span>5/5</span> · Hace 7 meses").
+     Confirmed in session: a console scan for element leaves containing a
+     relative date returned ZERO matches on the live page, which is why dates
+     were missing for nearly every review and the timeline showed "max 1".
+     Element-leaf scanning must never be the only strategy. -->
+<div id="card">
+  <span class="rs-chip rs-chip--genuine">88 · Trusted</span>
+  <div><span>Ana Berenguer Andreu</span></div>
+  <div><span>Reseña de </span><a href="https://www.google.com">Google</a></div>
+  <div class="meta"><span>5/5</span> · Hace 7 meses</div>
+  <div>
+    <span>Nos surgió un viaje con pocos días de antelación y no podíamos llevarnos
+    a nuestro peludo con nosotros. Me puse en contacto con Mi doggie y en esa misma
+    mañana lo solucionaron todo, un trato excelente y muy profesional.</span>
+    <span>Más</span>
+  </div>
+  <div role="menu"><span>Denunciar reseña</span></div>
+</div>

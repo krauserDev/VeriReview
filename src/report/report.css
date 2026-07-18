@@ -1,0 +1,107 @@
+:root {
+  --ink: #1b1b1d;
+  --ink-2: #6c6a63;
+  --line: #e2ddd2;
+  --paper: #fbfaf5;
+  --accent: #8a6410;
+  --accent-fill: #c48f2c;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #edeae1;
+  color: var(--ink);
+  font: 15px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.report {
+  max-width: 860px;
+  margin: 24px auto;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 40px 44px;
+}
+
+.report__loading { color: var(--ink-2); text-align: center; padding: 60px 0; }
+
+.rp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+}
+
+.rp-head h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: 0.2px; }
+.rp-head .rp-sub { color: var(--ink-2); font-size: 13px; max-width: 520px; overflow-wrap: anywhere; }
+.rp-brand { font-weight: 700; color: var(--accent); font-size: 14px; white-space: nowrap; }
+
+.rp-actions { margin: 0 0 18px; display: flex; gap: 10px; }
+.rp-actions button {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.rp-actions button.rp-ghost { background: transparent; color: var(--ink); }
+
+.rp-hero { display: flex; gap: 28px; align-items: center; margin-bottom: 26px; }
+.rp-hero__label { font-size: 13px; color: var(--ink-2); text-transform: uppercase; letter-spacing: 0.08em; }
+.rp-hero__verdict { font-size: 19px; font-weight: 700; margin-top: 2px; }
+.rp-hero__conf { font-size: 13px; color: var(--ink-2); margin-top: 6px; }
+
+.rp-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 26px; }
+.rp-stat { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.rp-stat b { display: block; font-size: 20px; }
+.rp-stat span { font-size: 12px; color: var(--ink-2); }
+
+h2.rp-h { font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin: 26px 0 12px; }
+
+.rp-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+.rp-charts svg { width: 100%; height: auto; }
+
+/* The timeline's viewBox is only 260 wide, so at full report width it scales ~3x
+   and its labels balloon (and crowd off their bars). Cap its width so it renders
+   near the panel's scale — the month labels then sit cleanly under each bar. */
+.rp-timeline { max-width: 440px; margin: 6px 0 0; }
+.rp-timeline svg { width: 100%; height: auto; }
+
+/* SVG chart text is sized in viewBox user units. Without these rules the labels
+   inherit the 15px body font and render enormous inside the small viewBoxes
+   (the timeline month names and "max N" overflowed). Match the panel's sizes. */
+.rs-chart__label, .rs-chart__value { font: 600 9px var(--font-mono); fill: var(--ink-2); }
+.rs-donut__num { font: 800 20px var(--font-mono); fill: var(--ink); }
+.rs-donut__sub { font: 600 8px var(--font-mono); fill: var(--ink-2); text-transform: uppercase; letter-spacing: 0.05em; }
+.rs-gauge__num { font: 800 34px var(--font-mono); fill: var(--ink); }
+.rs-gauge__sub { font: 600 11px var(--font-mono); fill: var(--ink-2); }
+
+.rp-pattern { border-left: 3px solid var(--accent); padding: 6px 12px; margin: 8px 0; }
+.rp-pattern b { font-size: 14px; }
+.rp-pattern p { margin: 2px 0 0; font-size: 13px; color: var(--ink-2); }
+
+.rp-rec { margin: 6px 0; font-size: 14px; }
+
+.rp-review { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 10px 0; page-break-inside: avoid; }
+.rp-review__top { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--ink-2); }
+.rp-review__score { font-weight: 700; font-size: 15px; }
+.rp-review__title { font-weight: 600; margin: 6px 0 2px; }
+.rp-review__text { font-size: 13.5px; color: var(--ink-2); margin: 0; }
+.rp-review__signals { margin: 8px 0 0; padding-left: 18px; font-size: 12.5px; color: var(--ink-2); }
+
+.rp-foot { margin-top: 30px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-2); display: flex; justify-content: space-between; }
+
+@media print {
+  body { background: #fff; }
+  .report { border: 0; border-radius: 0; margin: 0; max-width: none; padding: 0; }
+  .rp-actions { display: none; }
+}

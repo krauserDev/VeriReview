@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReviewShield — Privacy Policy / Política de Privacidad</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      max-width: 760px; margin: 0 auto; padding: 32px 20px 64px;
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #16283c; background: #fafcfc;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8eef2; background: #111a27; }
+      a { color: #4cc4bd; }
+      .lang-switch { border-color: rgba(232,238,242,.2); }
+    }
+    h1 { font-size: 1.6rem; margin: 0 0 4px; }
+    h2 { font-size: 1.15rem; margin-top: 2em; }
+    .muted { opacity: .7; font-size: .9rem; }
+    .box {
+      border: 1px solid rgba(23,92,99,.35); border-radius: 12px;
+      padding: 14px 18px; margin: 20px 0; font-weight: 600;
+    }
+    hr.divider { margin: 56px 0; border: none; border-top: 2px solid rgba(128,128,128,.25); }
+    ul { padding-left: 1.2em; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ======================= ENGLISH ======================= -->
+  <h1>ReviewShield — Privacy Policy</h1>
+  <p class="muted">Effective date: July 12, 2026 · Applies to the ReviewShield browser extension</p>
+
+  <div class="box">ZERO DATA COLLECTION. ReviewShield collects no user data whatsoever —
+  none. It runs 100% on your device, makes no network requests, and has no servers,
+  no accounts, no analytics and no tracking. There is no data to sell, share or leak.</div>
+
+  <h2>0. Zero data collection — the short version</h2>
+  <p>ReviewShield <strong>does not collect, transmit, store remotely, sell, share or
+  otherwise handle any user data</strong>. Specifically, we collect <strong>none</strong>
+  of the following: personally identifiable information, health information, financial
+  information, authentication information, personal communications, location, web
+  history, or user activity.</p>
+  <p><strong>You can verify this yourself.</strong> Open Chrome DevTools → Network tab
+  on any Amazon or Google page, run an analysis, and observe: ReviewShield makes zero
+  outbound requests. The extension's source code contains no <code>fetch</code>, no
+  <code>XMLHttpRequest</code>, no WebSocket and no analytics SDK of any kind. The full
+  source is published for independent inspection (see §9).</p>
+
+  <h2>1. What ReviewShield does</h2>
+  <p>ReviewShield analyzes product and business reviews visible on supported pages
+  (Amazon product pages, Google Search business panels and Google Maps places) and
+  assigns them trust scores. The analysis starts only when you request it — by
+  clicking <em>Analyze</em>, using the right-click menu or the keyboard shortcut —
+  unless you explicitly enable the optional automatic mode in Settings.</p>
+
+  <h2>2. Data processing — everything stays on your device</h2>
+  <ul>
+    <li>The text and metadata of reviews are read from the page you are viewing and
+      processed <strong>locally in your browser</strong>. They are never sent anywhere.</li>
+    <li>ReviewShield makes <strong>no network requests</strong> to our servers or to any
+      third party. We operate no servers.</li>
+    <li>No account is required and none can be created.</li>
+    <li>We use <strong>no analytics, no telemetry, no tracking and no advertising</strong> of any kind.</li>
+  </ul>
+
+  <h2>3. What is stored, and where</h2>
+  <ul>
+    <li><strong>Settings</strong> (sensitivity, theme, enabled sites…) are saved with your
+      browser's extension storage (<code>chrome.storage.sync</code>). If you have browser
+      sync enabled, your browser — not us — may sync these settings between your own
+      devices through your Google account. They contain no browsing data.</li>
+    <li><strong>Scan history and cached results</strong> (page title, URL, trust score, date)
+      are saved only on your device (<code>chrome.storage.local</code>) so you can revisit
+      recent analyses. Old entries are pruned automatically, and you can delete
+      everything at any time in <em>Settings → Clear cache &amp; history</em>.</li>
+  </ul>
+
+  <h2>4. Browser permissions we request, and why</h2>
+  <ul>
+    <li><strong>Access to Amazon and Google pages</strong> — required to read the reviews
+      displayed on those pages and show the analysis panel. The extension code runs
+      only on those domains and does nothing until you start an analysis.</li>
+    <li><strong>storage</strong> — save your settings and local scan history.</li>
+    <li><strong>notifications</strong> — optional local warnings when a page scores very low.
+      Generated on your device; can be disabled in Settings.</li>
+    <li><strong>contextMenus</strong> — the right-click "Analyze reviews" entry.</li>
+    <li><strong>alarms</strong> — periodic cleanup of old cached results on your device.</li>
+  </ul>
+
+  <h2>5. Your rights and choices</h2>
+  <ul>
+    <li>Delete all stored data at any time from the extension's Settings page.</li>
+    <li>Uninstalling the extension removes all its local data.</li>
+    <li>Since no data ever reaches us, there is nothing for us to access, correct,
+      export or erase on any server.</li>
+  </ul>
+
+  <h2>6. Children</h2>
+  <p>ReviewShield is not directed at children under 13 and collects no data from anyone.</p>
+
+  <h2>7. Limited Use compliance</h2>
+  <p>ReviewShield's single purpose is rating the trustworthiness of reviews on the page
+  you are viewing. Because we collect no data at all, we comply with Google's Limited
+  Use requirements by default: there is no data to use, transfer, or apply to any
+  secondary purpose. We do not use data for advertising, analytics, creditworthiness,
+  or model training, and we transfer nothing to third parties.</p>
+
+  <h2>8. Changes to this policy</h2>
+  <p>If a future version ever changes how data is handled, this page will be updated
+  <strong>before</strong> that version ships, the change will be disclosed in the
+  extension's changelog and Chrome Web Store listing, and any new data handling would
+  be opt-in. We will not silently change our data practices after installation.</p>
+
+  <h2>9. Source code</h2>
+  <p>ReviewShield's code is not obfuscated. The full, readable source is published so
+  that anyone — including Chrome Web Store reviewers — can verify every claim on this
+  page: <a href="https://github.com/">(repository URL — see the Store listing)</a></p>
+
+  <h2>10. Contact</h2>
+  <p>Questions about privacy: <a href="mailto:albertolopezterol90@gmail.com">albertolopezterol90@gmail.com</a></p>
+
+  <hr class="divider" />
+
+  <!-- ======================= ESPAÑOL ======================= -->
+  <h1 lang="es">ReviewShield — Política de Privacidad</h1>
+  <p class="muted" lang="es">Fecha de entrada en vigor: 12 de julio de 2026 · Aplica a la extensión de navegador ReviewShield</p>
+
+  <div class="box" lang="es">CERO RECOGIDA DE DATOS. ReviewShield no recoge ningún dato del
+  usuario — ninguno. Funciona al 100% en tu dispositivo, no realiza ninguna petición de red,
+  y no tiene servidores, ni cuentas, ni analíticas, ni rastreo. No hay datos que vender,
+  compartir ni filtrar.</div>
+
+  <div lang="es">
+    <h2>0. Cero recogida de datos — la versión corta</h2>
+    <p>ReviewShield <strong>no recoge, transmite, almacena en remoto, vende, comparte ni
+    trata ningún dato del usuario</strong>. En concreto, no recogemos <strong>nada</strong>
+    de lo siguiente: información de identificación personal, de salud, financiera, de
+    autenticación, comunicaciones personales, ubicación, historial web ni actividad del usuario.</p>
+    <p><strong>Puedes verificarlo tú mismo.</strong> Abre las DevTools de Chrome → pestaña
+    Network en cualquier página de Amazon o Google, ejecuta un análisis y comprueba:
+    ReviewShield no realiza ninguna petición saliente. El código fuente no contiene
+    <code>fetch</code>, ni <code>XMLHttpRequest</code>, ni WebSocket, ni ningún SDK de
+    analítica. El código completo está publicado para su inspección independiente (ver §9).</p>
+
+    <h2>1. Qué hace ReviewShield</h2>
+    <p>ReviewShield analiza las reseñas de productos y negocios visibles en las páginas
+    compatibles (fichas de producto de Amazon, paneles de negocio de la Búsqueda de Google
+    y lugares de Google Maps) y les asigna puntuaciones de confianza. El análisis solo
+    comienza cuando tú lo pides — pulsando <em>Analyze</em>, con el menú contextual o con
+    el atajo de teclado — salvo que actives expresamente el modo automático opcional en Ajustes.</p>
+
+    <h2>2. Tratamiento de datos: todo permanece en tu dispositivo</h2>
+    <ul>
+      <li>El texto y los metadatos de las reseñas se leen de la página que estás viendo y se
+        procesan <strong>localmente en tu navegador</strong>. Nunca se envían a ningún sitio.</li>
+      <li>ReviewShield <strong>no realiza peticiones de red</strong> a nuestros servidores ni a
+        terceros. No operamos ningún servidor.</li>
+      <li>No se requiere cuenta y no es posible crear ninguna.</li>
+      <li>No usamos <strong>ninguna analítica, telemetría, rastreo ni publicidad</strong>.</li>
+    </ul>
+
+    <h2>3. Qué se guarda y dónde</h2>
+    <ul>
+      <li><strong>Ajustes</strong> (sensibilidad, tema, sitios activados…): se guardan en el
+        almacenamiento de extensiones de tu navegador (<code>chrome.storage.sync</code>). Si tienes
+        la sincronización del navegador activada, tu navegador — no nosotros — puede sincronizar
+        estos ajustes entre tus propios dispositivos a través de tu cuenta de Google. No contienen
+        datos de navegación.</li>
+      <li><strong>Historial de análisis y resultados en caché</strong> (título de la página, URL,
+        puntuación, fecha): se guardan solo en tu dispositivo (<code>chrome.storage.local</code>).
+        Las entradas antiguas se eliminan automáticamente y puedes borrarlo todo en
+        <em>Ajustes → Clear cache &amp; history</em>.</li>
+    </ul>
+
+    <h2>4. Permisos del navegador que pedimos, y por qué</h2>
+    <ul>
+      <li><strong>Acceso a páginas de Amazon y Google</strong>: necesario para leer las reseñas de
+        esas páginas y mostrar el panel de análisis. El código solo se ejecuta en esos dominios y
+        no hace nada hasta que inicias un análisis.</li>
+      <li><strong>storage</strong>: guardar tus ajustes y el historial local.</li>
+      <li><strong>notifications</strong>: avisos locales opcionales cuando una página puntúa muy
+        bajo. Se generan en tu dispositivo; se pueden desactivar en Ajustes.</li>
+      <li><strong>contextMenus</strong>: la entrada "Analyze reviews" del clic derecho.</li>
+      <li><strong>alarms</strong>: limpieza periódica de resultados antiguos en tu dispositivo.</li>
+    </ul>
+
+    <h2>5. Tus derechos y opciones</h2>
+    <ul>
+      <li>Borra todos los datos guardados cuando quieras desde la página de Ajustes.</li>
+      <li>Desinstalar la extensión elimina todos sus datos locales.</li>
+      <li>Como ningún dato llega nunca a nosotros, no existe nada que podamos consultar,
+        corregir, exportar o eliminar en ningún servidor.</li>
+    </ul>
+
+    <h2>6. Menores</h2>
+    <p>ReviewShield no está dirigida a menores de 13 años y no recoge datos de nadie.</p>
+
+    <h2>7. Cumplimiento del Uso Limitado (Limited Use)</h2>
+    <p>El propósito único de ReviewShield es valorar la fiabilidad de las reseñas de la página
+    que estás viendo. Como no recogemos ningún dato, cumplimos los requisitos de Uso Limitado
+    de Google por defecto: no hay datos que usar, transferir ni destinar a ningún fin
+    secundario. No usamos datos para publicidad, analítica, solvencia crediticia ni
+    entrenamiento de modelos, y no transferimos nada a terceros.</p>
+
+    <h2>8. Cambios en esta política</h2>
+    <p>Si una versión futura llegara a cambiar el tratamiento de datos, esta página se
+    actualizará <strong>antes</strong> de publicar esa versión, el cambio se comunicará en el
+    registro de cambios y en la ficha de la Chrome Web Store, y cualquier tratamiento nuevo
+    sería opcional (opt-in). No cambiaremos nuestras prácticas de datos en silencio después
+    de la instalación.</p>
+
+    <h2>9. Código fuente</h2>
+    <p>El código de ReviewShield no está ofuscado. El fuente completo y legible está publicado
+    para que cualquiera — incluidos los revisores de la Chrome Web Store — pueda verificar cada
+    afirmación de esta página: <a href="https://github.com/">(URL del repositorio — ver la ficha de la Store)</a></p>
+
+    <h2>10. Contacto</h2>
+    <p>Dudas sobre privacidad: <a href="mailto:albertolopezterol90@gmail.com">albertolopezterol90@gmail.com</a></p>
+  </div>
+
+</body>
+</html>

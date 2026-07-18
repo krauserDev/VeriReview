@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "ReviewShield: Detector de Reseñas Falsas en Amazon y Google",
+    "description": "Nombre de la extensión en la Chrome Web Store y el navegador (≤75 caracteres)."
+  },
+  "extDescription": {
+    "message": "Detecta reseñas falsas en Amazon y Google. Índice de confianza 0–100, alertas de patrones y explicaciones claras. 100% privado.",
+    "description": "Descripción corta de la ficha (≤132 caracteres)."
+  }
+}

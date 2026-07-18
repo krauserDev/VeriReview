@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ReviewShield — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="head">
+        <img src="../icons/icon128.png" alt="" width="44" height="44" />
+        <div>
+          <h1>ReviewShield settings</h1>
+          <p class="sub">Everything runs locally on your device. Nothing is sent anywhere.</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Websites</h2>
+        <label class="row">
+          <span>Analyze Amazon product reviews</span>
+          <input type="checkbox" id="site-amazon" class="switch" />
+        </label>
+        <label class="row">
+          <span>Analyze Google reviews (Maps &amp; Search)</span>
+          <input type="checkbox" id="site-google" class="switch" />
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Analysis</h2>
+        <label class="row row--col" for="sensitivity">
+          <span>Sensitivity — <output id="sensitivity-out">50</output>/100
+            <small>Higher values flag reviews more aggressively.</small></span>
+          <input type="range" id="sensitivity" min="0" max="100" step="5" />
+        </label>
+        <label class="row">
+          <span>Analysis depth
+            <small>Deep analyzes more reviews and cross-review patterns.</small></span>
+          <select id="depth">
+            <option value="quick">Quick (fastest)</option>
+            <option value="standard">Standard</option>
+            <option value="deep">Deep (most thorough)</option>
+          </select>
+        </label>
+        <label class="row">
+          <span>Analyze pages automatically
+            <small>Off by default. When off (recommended), ReviewShield stays idle until you click <b>Analyze</b> in the popup, use the right-click menu, or press <b>Alt+Shift+A</b>. When on, supported pages are analyzed automatically on load.</small></span>
+          <input type="checkbox" id="auto-scan" class="switch" />
+        </label>
+        <label class="row">
+          <span>Highlight reviews on the page</span>
+          <input type="checkbox" id="highlight" class="switch" />
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Appearance</h2>
+        <label class="row">
+          <span>Theme (floating panel)</span>
+          <select id="theme">
+            <option value="auto">Match system</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+        <label class="row">
+          <span>Language <small>More languages are planned.</small></span>
+          <select id="language" disabled><option value="en">English</option></select>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Scan history</h2>
+        <input type="search" id="history-search" placeholder="Search history by title or site…" aria-label="Search scan history" />
+        <div id="history" class="history"></div>
+      </section>
+
+      <section class="card">
+        <h2>Data &amp; privacy</h2>
+        <p class="sub">ReviewShield stores scan history and cache only in your browser. It never collects personal data or telemetry.</p>
+        <div class="actions">
+          <button id="export-settings" class="btn" type="button">Export settings</button>
+          <button id="import-settings" class="btn" type="button">Import settings</button>
+          <button id="clear-cache" class="btn btn--danger" type="button">Clear cache &amp; history</button>
+          <input type="file" id="import-file" accept="application/json" hidden />
+        </div>
+      </section>
+
+      <p id="saved" class="saved" role="status" aria-live="polite"></p>
+      <footer class="foot">ReviewShield v1.0.0 · Privacy-first, local-only analysis</footer>
+    </div>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

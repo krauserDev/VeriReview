@@ -1,0 +1,12 @@
+node_modules/
+dist/
+release/
+*.zip
+tools/train/data/
+tests/.build/
+tools/train/.build/
+
+# Documentación interna de estrategia — no publicar en el repo
+docs/store/PUBLISHING-GUIDE.md
+docs/ASO-PLAN.md
+docs/store/DASHBOARD.md
