@@ -76,7 +76,7 @@ export class Panel {
     private callbacks: PanelCallbacks,
   ) {
     this.host = document.createElement('div');
-    this.host.setAttribute('data-reviewshield', 'panel');
+    this.host.setAttribute('data-verireview', 'panel');
     this.root = this.host.attachShadow({ mode: 'closed' });
 
     const style = document.createElement('style');
@@ -86,7 +86,7 @@ export class Panel {
     this.panelEl = document.createElement('aside');
     this.panelEl.className = 'rs-panel';
     this.panelEl.setAttribute('role', 'complementary');
-    this.panelEl.setAttribute('aria-label', 'ReviewShield analysis panel');
+    this.panelEl.setAttribute('aria-label', 'VeriReview analysis panel');
     this.root.appendChild(this.panelEl);
     this.applyTheme();
 
@@ -95,7 +95,7 @@ export class Panel {
     this.fab = document.createElement('button');
     this.fab.className = 'rs-fab';
     this.fab.type = 'button';
-    this.fab.setAttribute('aria-label', 'Minimize or restore ReviewShield panel');
+    this.fab.setAttribute('aria-label', 'Minimize or restore VeriReview panel');
     this.fab.addEventListener('click', () => this.toggle());
     document.documentElement.appendChild(this.host);
     document.documentElement.appendChild(this.fab);
@@ -177,7 +177,7 @@ export class Panel {
     score.className = 'rs-fab__score';
     score.textContent = analysis ? String(analysis.trustIndex) : '…';
     const label = document.createElement('span');
-    label.textContent = 'ReviewShield';
+    label.textContent = 'VeriReview';
     this.fab.append(score, label);
     this.fab.classList.remove('rs-fab--good', 'rs-fab--warn', 'rs-fab--bad');
     if (analysis) {
@@ -198,7 +198,7 @@ export class Panel {
 
   private renderMessage(message: string): void {
     this.panelEl.innerHTML = `
-      ${this.headHtml('ReviewShield')}
+      ${this.headHtml('VeriReview')}
       <div class="rs-body">
         <div class="rs-scanning" style="align-items:flex-start">${escapeHtml(message)}</div>
         <div style="padding:0 16px 16px">
@@ -220,11 +220,11 @@ export class Panel {
       <header class="rs-head">
         <img class="rs-head__logo" src="${icon}" alt="" />
         <div>
-          <div class="rs-head__name">ReviewShield</div>
+          <div class="rs-head__name">VeriReview</div>
           <div class="rs-head__site">${escapeHtml(site)}</div>
         </div>
         <span class="rs-head__spacer"></span>
-        <button class="rs-iconbtn" data-action="close" type="button" aria-label="Close and remove ReviewShield from this page" title="Close &amp; remove from page">✕</button>
+        <button class="rs-iconbtn" data-action="close" type="button" aria-label="Close and remove VeriReview from this page" title="Close &amp; remove from page">✕</button>
       </header>`;
   }
 
@@ -430,20 +430,20 @@ export class Panel {
           <ul>
             <li><b>Trust Index (${a.trustIndex}/100)</b> — how authentic the reviews look overall. It's the average of the per-review scores, minus penalties for page-wide red flags (e.g. a wall of 5-star reviews).</li>
             <li><b>Star ratings</b> — the 1–5★ scores customers gave. This is what the site shows; a high average says nothing about whether the reviews are real.</li>
-            <li><b>ReviewShield verdicts</b> — our judgement of how <i>authentic</i> each review looks: Trusted, Mixed or Suspicious. This is about whether a real person wrote it, <b>not</b> whether they liked the place — a genuine 1★ review is still Trusted.</li>
+            <li><b>VeriReview verdicts</b> — our judgement of how <i>authentic</i> each review looks: Trusted, Mixed or Suspicious. This is about whether a real person wrote it, <b>not</b> whether they liked the place — a genuine 1★ review is still Trusted.</li>
             <li><b>Avg rating / ${midStat.label} / Suspicious</b> — mean star rating, ${
               isPlace
                 ? 'how many reviewers are Google Local Guides'
                 : 'count of verified purchases'
             }, and how many reviews we flagged.</li>
           </ul>
-          <p class="rs-disclaimer">ReviewShield flags <b>statistical patterns</b> commonly associated with paid or fake reviews — it cannot know whether any individual review is genuinely fake, and a low score is not an accusation against the reviewer. Treat it as a prompt to read more carefully, not as proof. Analysis runs entirely on your device.</p>
+          <p class="rs-disclaimer">VeriReview flags <b>statistical patterns</b> commonly associated with paid or fake reviews — it cannot know whether any individual review is genuinely fake, and a low score is not an accusation against the reviewer. Treat it as a prompt to read more carefully, not as proof. Analysis runs entirely on your device.</p>
         </details>
 
         <div class="rs-stats">
           <div class="rs-stat" title="Mean star rating customers gave (1–5)"><div class="rs-stat__num">${a.averageRating ?? '—'}</div><div class="rs-stat__label">Avg rating ★</div></div>
           <div class="rs-stat" title="${escapeHtml(midStat.title)}"><div class="rs-stat__num">${midStat.num}</div><div class="rs-stat__label">${midStat.label}</div></div>
-          <div class="rs-stat" title="Reviews ReviewShield flagged as suspicious"><div class="rs-stat__num" style="color:${suspicious ? VERDICT.bad : VERDICT.good}">${suspicious}</div><div class="rs-stat__label">Suspicious</div></div>
+          <div class="rs-stat" title="Reviews VeriReview flagged as suspicious"><div class="rs-stat__num" style="color:${suspicious ? VERDICT.bad : VERDICT.good}">${suspicious}</div><div class="rs-stat__label">Suspicious</div></div>
         </div>
 
         <section class="rs-section">
@@ -452,7 +452,7 @@ export class Panel {
         </section>
 
         <section class="rs-section">
-          <div class="rs-section__title">ReviewShield verdicts <span class="rs-hint">— how authentic each review looks</span></div>
+          <div class="rs-section__title">VeriReview verdicts <span class="rs-hint">— how authentic each review looks</span></div>
           <div class="rs-card rs-split">
             <div class="rs-legend">
               <div class="rs-legend__row"><span class="rs-legend__dot" style="background:${VERDICT.good}"></span> Trusted <b>${genuine}</b></div>

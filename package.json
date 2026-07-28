@@ -1,7 +1,7 @@
 {
-  "name": "reviewshield",
-  "version": "1.0.0",
-  "description": "ReviewShield — detect suspicious and manipulated product reviews before you buy.",
+  "name": "verireview",
+  "version": "1.0.1",
+  "description": "VeriReview — detect suspicious and manipulated product reviews before you buy.",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,6 +11,8 @@
     "format": "prettier --write \"src/**/*.{ts,css,html}\"",
     "build": "npm run clean && npm run typecheck && npm run lint && node scripts/build.mjs",
     "test": "node tests/run.mjs",
+    "icons": "node tools/icons/generate-assets.mjs",
+    "screenshots": "node tools/screenshots/build-screenshots.mjs",
     "train": "node tools/train/train.mjs",
     "package": "npm run build && npm test && node scripts/package.mjs"
   },

@@ -15,7 +15,7 @@ function buildChip(analysis: ReviewAnalysis): HTMLSpanElement {
   chip.setAttribute('role', 'note');
   chip.setAttribute(
     'aria-label',
-    `ReviewShield score ${analysis.score} out of 100 — ${LEVEL_LABEL[analysis.level]}`,
+    `VeriReview score ${analysis.score} out of 100 — ${LEVEL_LABEL[analysis.level]}`,
   );
   return chip;
 }

@@ -30,7 +30,7 @@ function render(target: HTMLElement): boolean {
 
   const title = document.createElement('div');
   title.className = 'rs-tooltip__title';
-  title.textContent = `ReviewShield · ${analysis.score}/100 — ${LEVEL_LABEL[analysis.level]}`;
+  title.textContent = `VeriReview · ${analysis.score}/100 — ${LEVEL_LABEL[analysis.level]}`;
   tip.appendChild(title);
 
   const signals = analysis.signals.slice(0, 6);

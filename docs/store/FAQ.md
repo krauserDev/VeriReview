@@ -1,13 +1,13 @@
-# ReviewShield — FAQ
+# VeriReview — FAQ
 
-Honest answers about what ReviewShield does, what it cannot do, and how it
+Honest answers about what VeriReview does, what it cannot do, and how it
 handles your data. Publish this alongside the Store listing (and link it from
 the listing's description) — it doubles as evidence of good faith for the
 Chrome Web Store review.
 
 ---
 
-## What exactly does ReviewShield do?
+## What exactly does VeriReview do?
 
 It reads the reviews already visible on the page you're on (Amazon product
 pages, Google Search business panels, Google Maps places) and rates how likely
@@ -15,7 +15,7 @@ they are to be authentic, using a model that runs entirely on your device.
 
 ## Does it *prove* a review is fake?
 
-**No — and we will never claim it does.** ReviewShield detects **statistical
+**No — and we will never claim it does.** VeriReview detects **statistical
 patterns** that are commonly associated with paid or fake reviews: accounts with
 a single review in their whole history, near-identical text across reviews,
 bursts of reviews in a short window, walls of 5-star ratings with no middle
@@ -31,17 +31,17 @@ yourself instead of trusting a black box.
 ## Is it accurate?
 
 Text-only fake-review detection has a low ceiling — a paid review written by a
-real human reads like a real review. ReviewShield's strongest signals are
+real human reads like a real review. VeriReview's strongest signals are
 behavioural (reviewer history, duplication, timing), not linguistic. We publish
 our model, its features and its measured accuracy openly in
 [docs/MODEL.md](../MODEL.md), including its limitations.
 
-Treat ReviewShield as a smoke detector, not a court verdict.
+Treat VeriReview as a smoke detector, not a court verdict.
 
 ## What data do you collect?
 
 **None.** Zero. No personal data, no browsing history, no analytics, no
-telemetry, no account, no tracking. ReviewShield makes **no network requests at
+telemetry, no account, no tracking. VeriReview makes **no network requests at
 all** — the entire analysis happens in your browser.
 
 You can verify this in 30 seconds: open DevTools → Network, run an analysis, and
@@ -80,7 +80,7 @@ functionality. Close the panel and the page is exactly as it was.
 
 ## Is this affiliated with Amazon or Google?
 
-No. ReviewShield is an independent tool and is not affiliated with, endorsed by
+No. VeriReview is an independent tool and is not affiliated with, endorsed by
 or sponsored by Amazon or Google. All trademarks belong to their owners.
 
 ## Is it free? What's the catch?

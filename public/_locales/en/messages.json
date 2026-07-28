@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "ReviewShield: Fake Review Detector for Amazon & Google",
+    "message": "VeriReview: Fake Review Detector for Amazon & Google",
     "description": "Extension name shown in the Chrome Web Store and browser. Keep under 75 chars; leads with the brand, then the primary keyword and platforms."
   },
   "extDescription": {

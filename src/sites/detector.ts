@@ -142,7 +142,7 @@ export function detectReviewCards(scope: ParentNode = document): HTMLElement[] {
     // Never let our own injected UI (fab, tooltip, chips, panel host) be
     // mistaken for a review — it lives in the same document and can contain
     // short numeric text that coincidentally looks like a rating.
-    if (el.closest('[data-reviewshield], .rs-fab, .rs-tooltip, .rs-chip')) continue;
+    if (el.closest('[data-verireview], .rs-fab, .rs-tooltip, .rs-chip')) continue;
     if (isRatingNode(el)) {
       // Skip rating nodes nested inside an already-collected rating node.
       if (ratingNodes.some((r) => r.contains(el) || el.contains(r))) continue;

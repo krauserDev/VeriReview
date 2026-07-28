@@ -1,4 +1,4 @@
-# ReviewShield — Auditoría Fase 1: Modo Manual + Optimización de la base
+# VeriReview — Auditoría Fase 1: Modo Manual + Optimización de la base
 
 Fecha: 2026-07-10
 
@@ -35,7 +35,7 @@ al DOM hasta que el usuario lo pide explícitamente.
    muestra el resultado con acciones *Re-analyze / Full report / Clear*.
    - [src/popup/popup.html](../src/popup/popup.html),
      [popup.css](../src/popup/popup.css), [popup.ts](../src/popup/popup.ts)
-2. **Menú contextual (clic derecho):** "Analyze reviews with ReviewShield".
+2. **Menú contextual (clic derecho):** "Analyze reviews with VeriReview".
    Se ha corregido un bug: antes solo se registraba para `amazon.com`/`google.com`;
    ahora cubre **todos los dominios soportados** (`.es`, `.de`, `.fr`, …) desde
    una única lista compartida.
@@ -75,7 +75,7 @@ atajo de teclado.
 Los ids de reseña se **fijan al elemento del DOM** (`WeakMap`) la primera vez que
 se ven, de modo que un re-render trivial del sitio (espacios, carga diferida) no
 cambia el id y no rompe la deduplicación. El detector universal también **excluye
-la propia UI** de la extensión (`[data-reviewshield]`, `.rs-fab`, `.rs-tooltip`,
+la propia UI** de la extensión (`[data-verireview]`, `.rs-fab`, `.rs-tooltip`,
 `.rs-chip`) para no confundirla nunca con una reseña.
 
 ## 6. Verificación

@@ -1,13 +1,13 @@
-# 🛡 ReviewShield
+# 🔍 VeriReview
 
 **Spot suspicious reviews on Amazon and Google — locally, privately, with explanations.**
 
-ReviewShield is a Manifest V3 Chrome extension that analyzes the reviews on the page you're viewing and produces a 0–100 **Trust Index**, per-review scores with human-readable reasons, page-level suspicious-pattern detection, and a full dashboard with charts, filters and exports.
+VeriReview is a Manifest V3 Chrome extension that analyzes the reviews on the page you're viewing and produces a 0–100 **Trust Index**, per-review scores with human-readable reasons, page-level suspicious-pattern detection, and a full dashboard with charts, filters and exports.
 
 Two principles drive every design decision:
 
 - **Zero data collection.** All analysis runs 100% on-device. The extension makes **no network requests** — no servers, no accounts, no analytics, no telemetry. Verifiable in DevTools and in this source tree (`grep -rE "fetch\(|XMLHttpRequest" src/` → nothing).
-- **Signals, not verdicts.** ReviewShield flags statistical patterns commonly associated with paid or fake reviews and always shows *why*. It never claims to prove an individual review is fake, and a low score is not an accusation against its author.
+- **Signals, not verdicts.** VeriReview flags statistical patterns commonly associated with paid or fake reviews and always shows *why*. It never claims to prove an individual review is fake, and a low score is not an accusation against its author.
 
 ---
 
@@ -19,7 +19,7 @@ Two principles drive every design decision:
 - **On-device classifier:** logistic model over interpretable features (reviewer history, near-duplicate text, timing bursts, rating skew, text heuristics). Weights are trained (see [docs/MODEL.md](docs/MODEL.md)) and fully published — no black box.
 - **Author-history signals:** single-review accounts and thin profiles (the strongest markers of purchased reviews on Google), Local Guide status, per-page repeat authors.
 - **Page-level patterns:** five-star walls, review bombing, bursts, polarized distributions, compressed timelines, copy-paste clusters, floods of first-time reviewers.
-- **Dashboard panel** (Shadow-DOM isolated): star-rating distribution vs. ReviewShield verdicts (clearly separated), reviews-per-month trend chart, suspicious activity, recommendations, live-counted filters (trust bands, verified, suspicious, repeat authors…), score-range and sort controls, author drill-down, jump-to-review.
+- **Dashboard panel** (Shadow-DOM isolated): star-rating distribution vs. VeriReview verdicts (clearly separated), reviews-per-month trend chart, suspicious activity, recommendations, live-counted filters (trust bands, verified, suspicious, repeat authors…), score-range and sort controls, author drill-down, jump-to-review.
 - **Exports:** JSON, CSV (Excel-safe UTF-8) and a printable PDF report.
 - **Multilingual parsing:** review dates and rating widgets in English, Spanish, French, German and Italian.
 - **Accessibility:** ARIA labels, keyboard focus, `prefers-reduced-motion`.
@@ -67,7 +67,7 @@ Then in Chrome:
 
 Everything reviewer-facing lives in [`docs/store/`](docs/store/):
 
-1. `npm run package` → upload `release/reviewshield-<version>.zip`
+1. `npm run package` → upload `release/verireview-<version>.zip`
 2. Paste the listing texts and permission justifications from [`docs/store/DASHBOARD.md`](docs/store/DASHBOARD.md)
 3. Host [`docs/store/privacy-policy.html`](docs/store/privacy-policy.html) at a public https URL and link it in the listing
 4. Compliance evidence (policy-by-policy, with runnable verification): [`docs/store/COMPLIANCE.md`](docs/store/COMPLIANCE.md)
@@ -78,7 +78,7 @@ Everything reviewer-facing lives in [`docs/store/`](docs/store/):
 ## Architecture
 
 ```
-reviewshield/
+verireview/
 ├── public/                  # Static assets copied to dist/
 │   ├── manifest.json        # MV3 manifest
 │   ├── icons/               # 16/32/48/128 px

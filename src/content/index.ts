@@ -289,7 +289,7 @@ function findMoreButton(): HTMLElement | null {
   const guarded = adapter?.id !== 'amazon';
   for (const selector of ['button, [role="button"]', 'a, div[jsaction], span[jsaction]']) {
     for (const b of document.querySelectorAll<HTMLElement>(selector)) {
-      if (b.closest('[data-reviewshield], .rs-fab, .rs-tooltip')) continue;
+      if (b.closest('[data-verireview], .rs-fab, .rs-tooltip')) continue;
       if (guarded && isNavigatingControl(b)) continue;
       if (isMoreReviewsLabel(b.textContent ?? '')) return b;
     }

@@ -1,6 +1,6 @@
 # Chrome Web Store — compliance dossier
 
-Evidence that ReviewShield complies with the Chrome Web Store Developer Program
+Evidence that VeriReview complies with the Chrome Web Store Developer Program
 Policies, **including the updates enforced from 1 August 2026**. Every claim
 below is verifiable from the source tree; the commands are runnable.
 
@@ -106,7 +106,7 @@ Closing the panel tears down every injected element, listener and cached state.
 
 ## 6. No deception / honest claims
 
-- The UI states in-product that ReviewShield flags **statistical patterns**, not
+- The UI states in-product that VeriReview flags **statistical patterns**, not
   proof of fraud, and that a low score is not an accusation against a reviewer
   (see the panel's "What do these numbers mean?" disclaimer).
 - The model, its features, its measured accuracy **and its limitations** are

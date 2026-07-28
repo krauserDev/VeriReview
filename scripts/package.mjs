@@ -1,4 +1,4 @@
-/** Zips dist/ into release/reviewshield-vX.Y.Z.zip for Chrome Web Store upload. */
+/** Zips dist/ into release/verireview-vX.Y.Z.zip for Chrome Web Store upload. */
 import { mkdirSync, readFileSync, rmSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
@@ -12,7 +12,7 @@ if (!existsSync(dist)) {
   process.exit(1);
 }
 mkdirSync(path.join(root, 'release'), { recursive: true });
-const out = path.join(root, 'release', `reviewshield-v${version}.zip`);
+const out = path.join(root, 'release', `verireview-v${version}.zip`);
 rmSync(out, { force: true }); // stale zips must never be re-uploaded by accident
 
 if (process.platform === 'win32') {

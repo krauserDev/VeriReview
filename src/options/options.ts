@@ -103,7 +103,7 @@ function bindDataTools(): void {
     const blob = new Blob([JSON.stringify(settings, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'reviewshield-settings.json';
+    a.download = 'verireview-settings.json';
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 5_000);
   });

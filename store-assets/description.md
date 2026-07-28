@@ -1,7 +1,7 @@
-# Chrome Web Store Listing — ReviewShield
+# Chrome Web Store Listing — VeriReview
 
 ## Name
-ReviewShield — Fake Review Detector
+VeriReview — Fake Review Detector
 
 ## Short description (132 chars max)
 Spot fake and suspicious reviews on Amazon and Google. Local, private analysis with a clear Trust Index and explained warnings.
@@ -11,13 +11,13 @@ Shopping (alternative: Productivity)
 
 ## Long description
 
-Tired of wondering whether the glowing reviews on a product page are real? ReviewShield analyzes the reviews on the page you are viewing and gives you an honest, explainable answer — instantly and 100% on your device.
+Tired of wondering whether the glowing reviews on a product page are real? VeriReview analyzes the reviews on the page you are viewing and gives you an honest, explainable answer — instantly and 100% on your device.
 
 **What you get**
 
-🛡 **Trust Index (0–100)** — a single, animated score summarizing how trustworthy the reviews on the current page look, with a clear verdict and confidence level.
+🔍 **Trust Index (0–100)** — a single, animated score summarizing how trustworthy the reviews on the current page look, with a clear verdict and confidence level.
 
-🔍 **Per-review analysis** — every review gets its own score. Suspicious reviews are outlined in color right on the page, and hovering shows exactly *why* they were flagged: generic praise, marketing language, AI-style writing, keyword stuffing, near-duplicate text, and more. ReviewShield never just says "fake" — it always explains its reasoning.
+🔍 **Per-review analysis** — every review gets its own score. Suspicious reviews are outlined in color right on the page, and hovering shows exactly *why* they were flagged: generic praise, marketing language, AI-style writing, keyword stuffing, near-duplicate text, and more. VeriReview never just says "fake" — it always explains its reasoning.
 
 📊 **Pattern detection** — page-level red flags such as review bombing, sudden bursts of reviews in a few days, unnaturally skewed five-star distributions, polarized ratings, duplicate clusters, and compressed timelines.
 
@@ -40,7 +40,7 @@ Tired of wondering whether the glowing reviews on a product page are real? Revie
 
 **Honest limitations**
 
-ReviewShield uses heuristic signals, not magic. A low score means "be careful and read closely," not "proven fraud." Sophisticated fake reviews can evade detection, and genuine reviews occasionally trip a signal. Use it as one input in your decision, alongside your own judgment.
+VeriReview uses heuristic signals, not magic. A low score means "be careful and read closely," not "proven fraud." Sophisticated fake reviews can evade detection, and genuine reviews occasionally trip a signal. Use it as one input in your decision, alongside your own judgment.
 
 ## Keywords
 fake reviews, review checker, review analyzer, amazon reviews, google reviews, trust score, fake review detector, shopping assistant, review analysis, spam reviews

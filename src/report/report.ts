@@ -51,7 +51,7 @@ function render(analysis: PageAnalysis): void {
         <h1>Trust Report</h1>
         <div class="rp-sub">${escapeHtml(analysis.pageTitle)}<br>${escapeHtml(analysis.url)}</div>
       </div>
-      <div class="rp-brand">🛡 ReviewShield</div>
+      <div class="rp-brand">🔍 VeriReview</div>
     </div>
 
     <div class="rp-actions">
@@ -109,7 +109,7 @@ function render(analysis: PageAnalysis): void {
 
     <div class="rp-foot">
       <span>Generated ${new Date(analysis.scannedAt).toLocaleString()}</span>
-      <span>All analysis performed locally · ReviewShield</span>
+      <span>All analysis performed locally · VeriReview</span>
     </div>`;
 
   document.getElementById('print')?.addEventListener('click', () => window.print());

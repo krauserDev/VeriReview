@@ -73,15 +73,15 @@ chrome.runtime.onMessage.addListener((msg: RuntimeMessage, sender, sendResponse)
 /* Context menu — one of the three ways to start a manual analysis. */
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
-    id: 'reviewshield-scan',
-    title: 'Analyze reviews with ReviewShield',
+    id: 'verireview-scan',
+    title: 'Analyze reviews with VeriReview',
     contexts: ['page'],
     documentUrlPatterns: SUPPORTED_URL_PATTERNS,
   });
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId === 'reviewshield-scan' && tab?.id !== undefined) {
+  if (info.menuItemId === 'verireview-scan' && tab?.id !== undefined) {
     requestAnalysis(tab.id);
   }
 });

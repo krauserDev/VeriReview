@@ -14,7 +14,7 @@ function download(filename: string, mime: string, content: string): void {
 const stamp = () => new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
 
 export function exportJson(analysis: PageAnalysis): void {
-  download(`reviewshield-${stamp()}.json`, 'application/json', JSON.stringify(analysis, null, 2));
+  download(`verireview-${stamp()}.json`, 'application/json', JSON.stringify(analysis, null, 2));
 }
 
 function csvCell(value: string | number | boolean | null): string {
@@ -46,7 +46,7 @@ export function exportCsv(analysis: PageAnalysis): void {
   // every accented character ("Héctor" → "HÃ©ctor") — most of our users read
   // Spanish reviews.
   const content = '﻿' + [header.join(','), ...rows].join('\n');
-  download(`reviewshield-${stamp()}.csv`, 'text/csv;charset=utf-8', content);
+  download(`verireview-${stamp()}.csv`, 'text/csv;charset=utf-8', content);
 }
 
 /** Opens the report page (extension page); user prints → Save as PDF. */

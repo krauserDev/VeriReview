@@ -1,5 +1,5 @@
 /**
- * ReviewShield — training pipeline for the on-device classifier.
+ * VeriReview — training pipeline for the on-device classifier.
  *
  * Trains an L2-regularized logistic regression over the EXACT features the
  * extension computes at inference time (the analyzers are bundled from src/,

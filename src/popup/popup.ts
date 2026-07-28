@@ -107,35 +107,61 @@ function renderResult(analysis: PageAnalysis): void {
 }
 
 async function renderCurrent(): Promise<void> {
-  const tab = await activeTab();
+  let tab: chrome.tabs.Tab | undefined;
+  try {
+    tab = await activeTab();
+  } catch {
+    /* tab query failed — fall through to the unsupported state */
+  }
   const url = tab?.url ?? '';
   const site = detectSite(url);
-  const analysis = url ? await getCachedAnalysis(url) : null;
 
-  if (analysis) {
-    show('result');
-    renderResult(analysis);
-    setPrimary('↻ Re-analyze this page', () => void messageActiveTab({ type: 'REQUEST_RESCAN' }));
-    setSecondary([
-      { label: 'Full report', onClick: () => void chrome.runtime.sendMessage({ type: 'OPEN_REPORT', analysis } satisfies RuntimeMessage) },
-      { label: 'Clear', onClick: () => void messageActiveTab({ type: 'STOP_ANALYSIS' }) },
-    ]);
-    return;
-  }
-
-  if (site) {
-    show('ready');
-    $('#site-name').textContent = site;
-    const settings = await getSettings();
-    $('#est-time').textContent = DEPTH_ESTIMATE[settings.analysisDepth] ?? '~2s';
-    setPrimary('Analyze reviews', () => void messageActiveTab({ type: 'START_ANALYSIS' }));
+  // Not a supported page: there is nothing to analyze.
+  if (!site) {
+    show('unsupported');
+    $<HTMLButtonElement>('#primary-action').hidden = true;
     setSecondary([]);
     return;
   }
 
-  show('unsupported');
-  $<HTMLButtonElement>('#primary-action').hidden = true;
+  // Supported page. A stale read of the cache must never stop us from offering
+  // the button, so treat any failure as "no cached analysis".
+  let analysis: PageAnalysis | null = null;
+  try {
+    analysis = url ? await getCachedAnalysis(url) : null;
+  } catch {
+    analysis = null;
+  }
+
+  if (analysis) {
+    const cached = analysis;
+    show('result');
+    // Wire the primary action FIRST: the gauge/summary render below is purely
+    // cosmetic and must never be able to leave the button unwired if it throws.
+    setPrimary('↻ Re-analyze this page', () => void messageActiveTab({ type: 'REQUEST_RESCAN' }));
+    setSecondary([
+      { label: 'Full report', onClick: () => void chrome.runtime.sendMessage({ type: 'OPEN_REPORT', analysis: cached } satisfies RuntimeMessage) },
+      { label: 'Clear', onClick: () => void messageActiveTab({ type: 'STOP_ANALYSIS' }) },
+    ]);
+    try {
+      renderResult(cached);
+    } catch {
+      /* result summary is decorative; the button still works */
+    }
+    return;
+  }
+
+  // Ready to analyze. Show the button before the (cosmetic) time estimate.
+  show('ready');
+  $('#site-name').textContent = site;
+  setPrimary('Analyze reviews', () => void messageActiveTab({ type: 'START_ANALYSIS' }));
   setSecondary([]);
+  try {
+    const settings = await getSettings();
+    $('#est-time').textContent = DEPTH_ESTIMATE[settings.analysisDepth] ?? '~2s';
+  } catch {
+    /* estimate is cosmetic */
+  }
 }
 
 async function renderRecent(): Promise<void> {
@@ -178,5 +204,8 @@ async function renderRecent(): Promise<void> {
 
 $('#open-settings').addEventListener('click', () => void chrome.runtime.openOptionsPage());
 
-void renderCurrent();
+void renderCurrent().catch(() => {
+  // Last-resort fallback: never leave the popup in a blank, buttonless state.
+  show('unsupported');
+});
 void renderRecent();

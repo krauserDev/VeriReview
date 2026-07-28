@@ -1,4 +1,4 @@
-# ReviewShield — On-device fake-review classifier
+# VeriReview — On-device fake-review classifier
 
 The scoring engine is an **on-device logistic-regression classifier**
 ([src/analysis/model.ts](../src/analysis/model.ts)). It runs 100% in the

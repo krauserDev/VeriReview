@@ -1,4 +1,4 @@
-# ReviewShield — Release Notes
+# VeriReview — Release Notes
 
 ## v1.0.0 — Initial release (July 2026)
 

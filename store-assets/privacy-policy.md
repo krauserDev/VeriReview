@@ -1,14 +1,14 @@
-# ReviewShield — Privacy Policy
+# VeriReview — Privacy Policy
 
 _Last updated: July 2026_
 
 ## Summary
 
-ReviewShield does not collect, transmit, sell, or share any data. All analysis happens locally in your browser.
+VeriReview does not collect, transmit, sell, or share any data. All analysis happens locally in your browser.
 
 ## What the extension does
 
-When you visit a supported review page (Amazon product pages, Google Maps/Search business reviews), ReviewShield reads the review content that is already visible in your browser and analyzes it **on your device** to compute trust scores.
+When you visit a supported review page (Amazon product pages, Google Maps/Search business reviews), VeriReview reads the review content that is already visible in your browser and analyzes it **on your device** to compute trust scores.
 
 ## Data storage
 
@@ -22,7 +22,7 @@ You can erase all stored data at any time from the options page ("Clear cache & 
 
 ## Data transmission
 
-**None.** ReviewShield makes no network requests. There are no analytics, no telemetry, no crash reporting, no remote configuration, and no third-party services.
+**None.** VeriReview makes no network requests. There are no analytics, no telemetry, no crash reporting, no remote configuration, and no third-party services.
 
 ## Permissions explained
 
@@ -30,13 +30,13 @@ You can erase all stored data at any time from the options page ("Clear cache & 
 |---|---|
 | `storage` | Save your settings, scan history and cache locally. |
 | `notifications` | Optionally alert you when a page scores below your chosen threshold. Can be disabled. |
-| `contextMenus` | Adds a "Scan reviews with ReviewShield" right-click entry. |
+| `contextMenus` | Adds a "Scan reviews with VeriReview" right-click entry. |
 | `alarms` | Periodically prunes expired cache entries. |
 | Host access to Amazon/Google domains | Read the reviews on the page so they can be analyzed locally. |
 
 ## Children
 
-ReviewShield does not knowingly collect any information from anyone, including children.
+VeriReview does not knowingly collect any information from anyone, including children.
 
 ## Changes
 
